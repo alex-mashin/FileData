@@ -1,0 +1,24 @@
+{
+	"name": "FileData",
+	"author": "Alexander Mashin <alex_mashin@list.ru>",
+	"version": "0.1",
+	"url": "https://github.com/alex-mashin/FileData",
+	"descriptionmsg": "filedata-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "parserhook",
+	"MessagesDirs": {
+		"ExampleExtension": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"FileDataHooks": "src/FileDataHooks.php"
+	},
+	"ExtensionMessagesFiles": {
+		"FileDataMagic": "FileData.i18n.alias.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "FileDataHooks::onParserFirstCallInit"
+	},
+	"manifest_version": 1
+}
