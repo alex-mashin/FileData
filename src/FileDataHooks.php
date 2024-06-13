@@ -32,7 +32,7 @@ class FileDataHooks {
 	];
 
 	/*
-	 * Register any render callbacks with the parser.
+	 * Register {{#file_data:}}.
 	 * @param Parser $parser
 	 * @return void
 	 */
@@ -86,7 +86,7 @@ class FileDataHooks {
 
 		// Process metadata:
 		if ( $field === 'img_metadata' ) {
-			$value = json_decode( $value ?? [], true)[$attr] ?? null;
+			$value = json_decode( $value ?? '{}', true)[$attr] ?? null;
 		}
 		return $value ?? self::error ('illegal', $attr);
 	}
@@ -96,7 +96,7 @@ class FileDataHooks {
 	 * @param string $id Message id.
 	 * @return string
 	 */
-	private static function error( string $id, ...$optional): string {
+	private static function error( string $id, ...$optional ): string {
 		return '<span class="error">'
 			. wfMessage( "filedata-$id", $optional )->text()
 			. '</span>';
