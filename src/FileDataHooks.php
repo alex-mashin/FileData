@@ -49,7 +49,7 @@ class FileDataHooks {
 	 * @param string $attr
 	 * @return string
 	 */
-	public static function fileData( Parser $parser, string $filename string $attr ): string {
+	public static function fileData( Parser $parser, string $filename, string $attr ): string {
 		// Whence the required attribute comes, if at all:
 		$join = null;
 		$field = 'img_metadata';
