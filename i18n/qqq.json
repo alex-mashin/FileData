@@ -2,5 +2,5 @@
 	"filedata-desc": "Extension description",
 	"filedata-illegal": "Message shown when file attribute $1 is not found",
 	"filedata-invalid": "Message shown when A title object in File: namespace for $1 could not be created",
-	"filedata-absent": "Message shown when file $1 is absent.",
+	"filedata-absent": "Message shown when file $1 is absent."
 }
