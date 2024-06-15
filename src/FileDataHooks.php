@@ -70,7 +70,11 @@ class FileDataHooks {
 		}
 		
 		// Build and execute a query:
-		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
+		if ( function_extsts( 'wfGetDB' ) ) {
+			$dbr = wfGetDB( DB_REPLICA );
+		} else {
+			$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
+		}
 		$query = $dbr->newSelectQueryBuilder()
 			->select( [ $field ] )
 			->from( 'image' );
