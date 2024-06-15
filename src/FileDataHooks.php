@@ -70,8 +70,7 @@ class FileDataHooks {
 		}
 		
 		// Build and execute a query:
-		$dbProvider = MediaWikiServices::getInstance()->getConnectionProvider();
-		$dbr = $dbProvider->getReplicaDatabase();
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 		$query = $dbr->newSelectQueryBuilder()
 			->select( [ $field ] )
 			->from( 'image' );
