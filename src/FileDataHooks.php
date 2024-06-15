@@ -14,7 +14,8 @@ class FileDataHooks {
 			'major_mime' => 'img_major_mime',
 			'minor_mime' => 'img_minor_mime',
 			'timestamp' => 'img_timestamp',
-			'sha1' => 'img_sha1'
+			'sha1' => 'img_sha1',
+			'metadata' => 'img_metadata'
 		],
 		'comment' => [
 			'description' => 'comment_text'
@@ -89,7 +90,7 @@ class FileDataHooks {
 
 		// Process metadata:
 		if ( $field === 'img_metadata' ) {
-			$value = json_decode( $value ?? '{}', true)[$attr] ?? null;
+			$value = @unserialize( $value ?? '{}' )[$attr] ?? null;
 		}
 		return $value ?? self::error ('illegal', $attr);
 	}
