@@ -15,7 +15,7 @@
 		"FileDataHooks": "src/FileDataHooks.php"
 	},
 	"ExtensionMessagesFiles": {
-		"FileDataMagic": "FileData.i18n.alias.php"
+		"FileDataMagic": "FileData.i18n.php"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "FileDataHooks::onParserFirstCallInit"

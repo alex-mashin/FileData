@@ -17,5 +17,5 @@ $magicWords['en'] = [
  * @author Alexander Mashin
  */
 $magicWords['ru'] = [
-   'данные_файла' => [ 0, 'file_data' ]
+   'file_data' => [ 0, 'данные_файла' ]
 ];
