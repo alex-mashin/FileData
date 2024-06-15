@@ -29,8 +29,8 @@ Allowed attributes:
  - `minor_mime`,
  - `timestamp`,
  - `sha1`,
- - `comment`,
- - `actor`,
+ - `description`,
  - `user`,
  - `user_text`,
+ - `metadata`,
  - *whatever fields are present in the image metadata*.

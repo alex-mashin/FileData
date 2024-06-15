@@ -92,6 +92,9 @@ class FileDataHooks {
 		if ( $field === 'img_metadata' ) {
 			$value = @unserialize( $value ?? '{}' )[$attr] ?? null;
 		}
+		if ( $value && !is_string( $value ) ) {
+			$value = var_export( $value, true );
+		}
 		return $value ?? self::error ('illegal', $attr);
 	}
 	
