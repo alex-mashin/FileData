@@ -2,5 +2,5 @@
 	"filedata-desc": "A MediaWiki extension that provides parser function {{#file_data:}} returning uploaded file data",
 	"filedata-illegal": "Illegal file attribute $1",
 	"filedata-invalid": "Invalid file name $1",
-	"filedata-absent": "Absent file [[File:$1|]]",
+	"filedata-absent": "Absent file [[File:$1|]]"
 }
