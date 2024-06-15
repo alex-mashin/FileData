@@ -70,7 +70,7 @@ class FileDataHooks {
 		}
 		
 		// Build and execute a query:
-		if ( function_extsts( 'wfGetDB' ) ) {
+		if ( function_exists( 'wfGetDB' ) ) {
 			$dbr = wfGetDB( DB_REPLICA );
 		} else {
 			$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
