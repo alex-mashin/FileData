@@ -90,7 +90,11 @@ class FileDataHooks {
 
 		// Process metadata:
 		if ( $field === 'img_metadata' ) {
-			$value = @unserialize( $value ?? '{}' )[$attr] ?? null;
+			$metadata = @unserialize( $value ?? '' );
+			$value = $attr === 'metadata' ? $metadata : $metadata [$attr] ?? null;
+			if ( !$value ) {
+				$value = $metadata;
+			}
 		}
 		if ( $value && !is_string( $value ) ) {
 			$value = var_export( $value, true );
