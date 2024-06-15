@@ -82,7 +82,7 @@ class FileDataHooks {
 			$query = $query->join( $join, null, self::JOINS[$join] );
 		}
 		$query = $query
-			->where( $dbr->expr( 'img_name', '=', $title->getDBkey() ) )
+			->where( "img_name = '" . $title->getDBkey() . "'" )
 			->limit( 1 )
 			->caller( __METHOD__ );
 		$value = $query->fetchField();
