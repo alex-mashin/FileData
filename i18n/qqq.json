@@ -1,5 +1,7 @@
 {
 	"filedata-desc": "Extension description",
+	"filedata-no-file": "Message shown when file name is not specified",
+	"filedata-no-attr": "Message shown when required attribute is not specified",
 	"filedata-illegal": "Message shown when file attribute $1 is not found",
 	"filedata-invalid": "Message shown when A title object in File: namespace for $1 could not be created",
 	"filedata-absent": "Message shown when file $1 is absent."

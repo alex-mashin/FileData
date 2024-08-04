@@ -50,7 +50,13 @@ class FileDataHooks {
 	 * @param string $attr
 	 * @return string
 	 */
-	public static function fileData( Parser $parser, string $filename, string $attr ): string {
+	public static function fileData( Parser $parser, string $filename = '', string $attr = '' ): string {
+		if ( !$filename ) {
+			self::error ( 'no-file' );
+		}
+		if ( !$attr) {
+			self::error ( 'no-attr' );
+		}
 		// Whence the required attribute comes, if at all:
 		$join = null;
 		$field = 'img_metadata';
@@ -90,13 +96,13 @@ class FileDataHooks {
 
 		// Process metadata:
 		if ( $field === 'img_metadata' ) {
-			$metadata = @unserialize( $value ?? '' );
+			$metadata = @unserialize( $value ?? '', false );
 			$value = $attr === 'metadata' ? $metadata : $metadata [$attr] ?? $metadata ['metadata'][$attr] ?? null;
 		}
 		if ( $value && !is_string( $value ) ) {
 			$value = var_export( $value, true );
 		}
-		return $value ?? self::error ('illegal', $attr);
+		return $value ?? self::error( 'illegal', $attr );
 	}
 	
 	/**
